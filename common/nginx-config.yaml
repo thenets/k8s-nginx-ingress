@@ -1,0 +1,19 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: nginx-config
+  namespace: nginx-ingress
+data:
+  proxy-connect-timeout: "10s"
+  proxy-read-timeout: "10s"
+  client-max-body-size: "15m"
+  server-snippets: |
+    upstream rabbitmq-tcp {
+        zone rabbitmq-tcp 64k;
+        server rabbitmq-headless.rabbitmq.svc.cluster.local;
+    }
+    server {
+      listen 5672;
+      proxy_pass rabbitmq-tcp;
+      status_zone rabbitmq-tcp;
+    }
