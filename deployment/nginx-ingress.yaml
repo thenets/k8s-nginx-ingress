@@ -23,8 +23,6 @@ spec:
           containerPort: 80
         - name: https
           containerPort: 443
-        - name: amqp
-          containerPort: 5672
         env:
         - name: POD_NAMESPACE
           valueFrom:

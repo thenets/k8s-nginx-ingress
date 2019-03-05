@@ -15,9 +15,5 @@ spec:
     targetPort: 443
     protocol: TCP
     name: https
-  - port: 5672
-    targetPort: 5672
-    protocol: TCP
-    name: amqp
   selector:
     app: nginx-ingress
