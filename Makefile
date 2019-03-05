@@ -17,3 +17,6 @@ deploy-minikube:
 	kubectl apply -f daemon-set/nginx-ingress.yaml
 	kubectl apply -f service/nodeport.yaml
 	kubectl get svc nginx-ingress --namespace=nginx-ingress
+
+destroy:
+	kubectl delete ns nginx-ingress 
