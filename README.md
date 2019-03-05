@@ -1,6 +1,14 @@
-# Installation
+# k8s-nginx-ingress
 
-This folder includes Kubernetes manifests for installing NGINX or NGINX Plus Ingress controller. Read the installation instructions [here](../docs/installation.md).
+## Deploy to Minikube
+
+```bash
+make deploy-minikube
+```
 
 
+## Deploy to Google Cloud Platform
 
+```bash
+make deploy-gcp
+```
